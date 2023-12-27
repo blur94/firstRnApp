@@ -4,7 +4,7 @@ export const cats = [
     description:
       "The Siamese cat is one of the first distinctly recognized breeds of Asian cat. Derived from the Wichianmat landrace, one of several varieties of cats native to Thailand, the original Siamese became one of the most popular breeds in Europe and North America in the 19th century.",
     image:
-      "https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2lhbWVzZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1579272527475-1db5f8e4f27c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHNpYW1lc2UlMjBjYXR8ZW58MHx8MHx8fDA%3D",
   },
   {
     name: "British Shorthair",
