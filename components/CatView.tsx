@@ -1,5 +1,5 @@
 import { Text, View } from "./Themed";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, useWindowDimensions } from "react-native";
 
 interface Props {
   name: string;
@@ -8,6 +8,7 @@ interface Props {
 }
 
 export default function CatView({ name, description, image }: Props) {
+  const { fontScale } = useWindowDimensions();
   return (
     <View style={styles.container}>
       <Image
@@ -17,6 +18,9 @@ export default function CatView({ name, description, image }: Props) {
       />
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.description}>{description}</Text>
+      {/* <Text style={[styles.description, { fontSize: fontScale * 12 }]}>
+        {description}
+      </Text> */}
     </View>
   );
 }
@@ -24,7 +28,8 @@ export default function CatView({ name, description, image }: Props) {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
-    height: 450,
+    minHeight: 450,
+    paddingBottom: 20,
     borderRadius: 20,
     backgroundColor: "coral",
     marginBottom: 20,
