@@ -1,13 +1,23 @@
 import React from "react";
 import { Text, View } from "./Themed";
 import { dogs } from "../constants/dog";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, useColorScheme } from "react-native";
 
 export default function DogView() {
+  const colorScheme = useColorScheme();
+
   return (
     <View>
       {dogs.map((dog, index) => (
-        <View key={index} style={styles.container}>
+        <View
+          key={index}
+          style={[
+            styles.container,
+            {
+              backgroundColor: colorScheme === "light" ? "#dedede" : "#333333",
+            },
+          ]}
+        >
           <Image
             source={{ uri: dog.image }}
             style={{
@@ -32,7 +42,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     minHeight: 400,
     borderRadius: 20,
-    backgroundColor: "#dedede",
     marginBottom: 20,
     paddingBottom: 20,
     boxShadow: "0 0 10 black",
