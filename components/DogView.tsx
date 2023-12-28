@@ -30,10 +30,11 @@ export default function DogView() {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
-    height: 400,
+    minHeight: 400,
     borderRadius: 20,
     backgroundColor: "#dedede",
     marginBottom: 20,
+    paddingBottom: 20,
     boxShadow: "0 0 10 black",
   },
   title: {
