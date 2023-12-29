@@ -1,5 +1,8 @@
+import { ColorValue } from "react-native";
+
 import { Text, View } from "./Themed";
 import { Image, StyleSheet, useWindowDimensions } from "react-native";
+import color from "../constants/color";
 
 interface Props {
   name: string;
@@ -32,6 +35,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderRadius: 20,
     backgroundColor: "coral",
+    // backgroundColor: colors.primaryBG,
     marginBottom: 20,
     boxShadow: "0 0 10 black",
   },
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
   },
   description: {
     paddingHorizontal: 10,
-    color: "#fff",
+    // color: "#fff",
+    color: color.primaryColor,
   },
 });
