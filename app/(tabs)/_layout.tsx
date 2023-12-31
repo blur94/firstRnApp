@@ -67,6 +67,16 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
+
+      <Tabs.Screen
+        name="counter"
+        options={{
+          // title: "Cats",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="plus-circle" color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
