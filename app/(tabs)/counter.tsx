@@ -7,10 +7,12 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { useColorScheme } from "react-native";
 
 export default function CounterScreen() {
   const [counter, setCounter] = useState(0);
   const { width, height } = useWindowDimensions();
+  const colorScheme = useColorScheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -22,17 +24,30 @@ export default function CounterScreen() {
     },
     btn: {
       backgroundColor: "#333333",
-      alignSelf: "center",
+      alignContent: "center",
       marginTop: 20,
-      borderRadius: 20,
+      borderRadius: 10,
       padding: 15,
+      width: width / 4,
     },
     btnContainer: {
       display: "flex",
       width: width / 1.5,
       flexDirection: "row",
-      justifyContent: "center",
+      justifyContent: "space-between",
       gap: 30,
+    },
+    reset: {
+      backgroundColor: "#333333",
+      marginTop: 20,
+      padding: 15,
+      width: width / 1.5,
+      textAlign: "center",
+      borderRadius: 10,
+    },
+    btnText: {
+      color: colorScheme === "light" ? "#000" : "#fff",
+      textAlign: "center",
     },
   });
 
@@ -49,8 +64,7 @@ export default function CounterScreen() {
             <FontAwesome
               name="plus"
               size={25}
-              color="#fff"
-              style={{ opacity: pressed ? 0.5 : 1 }}
+              style={[{ opacity: pressed ? 0.5 : 1 }, styles.btnText]}
             />
           )}
         </Pressable>
@@ -66,12 +80,19 @@ export default function CounterScreen() {
             <FontAwesome
               name="minus"
               size={25}
-              color="#fff"
-              style={{ opacity: pressed ? 0.5 : 1 }}
+              style={[{ opacity: pressed ? 0.5 : 1 }, styles.btnText]}
             />
           )}
         </Pressable>
       </View>
+
+      <TouchableOpacity
+        activeOpacity={0.6}
+        style={styles.reset}
+        onPress={() => setCounter(0)}
+      >
+        <Text style={[styles.btnText, { fontSize: 20 }]}>Reset</Text>
+      </TouchableOpacity>
     </View>
   );
 }
